@@ -101,12 +101,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Container(
           color: Colors.blue,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 150.0,
-                width: 150.0,
+                height: 100.0,
+                width: 100.0,
                 padding: EdgeInsets.all(50),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
@@ -114,10 +114,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
-                height: 150.0,
-                width: 150.0,
+                height: 100.0,
+                width: 100.0,
                 padding: EdgeInsets.all(50),
-                margin: EdgeInsets.only(top: 8),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.0),
                   color: Colors.deepPurple
