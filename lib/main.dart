@@ -95,15 +95,22 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        leading: Icon(Icons.notification_add, color: Colors.blue),
       ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/images/suguru-geto.jpeg',
-            fit: BoxFit.cover,
-            height: 600,
-          ),
           SizedBox(height: 600, child: Center(child: Text('flutter'))),
+          ListTile(
+            leading: Icon(Icons.join_full),
+            title: Text(
+              'Mama mo dsadsadasdsadsadasdasdasdasdasdasdasdasdasdasdasdasdasdasda hhdasjkhdjk dhajksdhaksjdhahjk',
+            ),
+            tileColor: Colors.red,
+            trailing: Text('Category'),
+            onTap: () {
+              print('tile click');
+            },
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
