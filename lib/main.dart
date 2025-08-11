@@ -100,25 +100,30 @@ class _MyHomePageState extends State<MyHomePage> {
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          padding: EdgeInsets.all(50),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.red
-          ),
-          child: Container(
-            height: double.infinity,
-            width: double.infinity,
-            padding: EdgeInsets.all(50),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.deepPurpleAccent
-            ),
-            child: Text(
-                  'Ydhasjkdhajskdhad:',
-                  style: TextStyle(color: Colors.blue, ),
+          color: Colors.blue,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 150.0,
+                width: 150.0,
+                padding: EdgeInsets.all(50),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.deepPurple
                 ),
+              ),
+              Container(
+                height: 150.0,
+                width: 150.0,
+                padding: EdgeInsets.all(50),
+                margin: EdgeInsets.only(top: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10.0),
+                  color: Colors.deepPurple
+                ),
+              ),
+            ],
           ),
         ),
       ),
