@@ -4,6 +4,16 @@ void main() {
   runApp(const MyApp());
 }
 
+String name = 'Mamma mo';
+int timer = 0;
+double number = 0.0;
+List navigation = [
+  'Home',
+  'Profile',
+  'Settings',
+  'About',
+];
+Map mapNav = {'name': "John Doe"};
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -104,7 +114,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('Ydhasjkdhajskdhad:', 
+            style: TextStyle(color: Colors.blue)),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
