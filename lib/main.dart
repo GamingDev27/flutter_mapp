@@ -10,6 +10,7 @@ int timer = 0;
 double number = 0.0;
 List navigation = ['Home', 'Profile', 'Settings', 'About'];
 Map mapNav = {'name': "John Doe"};
+String? title1 = '1stOfMay';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            'Flutter Map',
+            title1!,
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
