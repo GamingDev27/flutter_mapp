@@ -21,57 +21,55 @@ class Layout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
-      valueListenable: isDarkModeNotifier,
-      builder: (context, value, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              title1!,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            centerTitle: true,
-            backgroundColor: Colors.indigo,
-            actions: [
-              IconButton(
-                onPressed: () {
-                  isDarkModeNotifier.value = !isDarkModeNotifier.value;
-                },
-                icon: Icon(Icons.dark_mode),
-              ),
-            ],
-          ),
-          drawer: SafeArea(
-            child: Drawer(
-              child: Column(children: [ListTile(title: Text('logout'))]),
-            ),
-          ),
-          floatingActionButton: SizedBox(
-            width: 80,
-            height: 80,
-            child: FloatingActionButton(
-              onPressed: () {
-                print('mama mo');
-              },
-              backgroundColor: Colors.greenAccent,
-              child: Icon(Icons.qr_code),
-            ),
-          ),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-
-          body: ValueListenableBuilder(
-            valueListenable: selectedPageNotifier,
-            builder: (context, selectedPage, child) {
-              return pages.elementAt(selectedPage);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          title1!,
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.indigo,
+        actions: [
+          IconButton(
+            onPressed: () {
+              isDarkModeNotifier.value = !isDarkModeNotifier.value;
             },
+            icon: ValueListenableBuilder(
+              valueListenable: isDarkModeNotifier,
+              builder: (context, isDarkMode, child) {
+                return Icon(
+                  isDarkModeNotifier.value ? Icons.light_mode : Icons.dark_mode,
+                );
+              },
+            ),
           ),
-          bottomNavigationBar: Navibar(),
-        );
-      },
+        ],
+      ),
+      drawer: SafeArea(
+        child: Drawer(
+          child: Column(children: [ListTile(title: Text('logout'))]),
+        ),
+      ),
+      floatingActionButton: SizedBox(
+        width: 80,
+        height: 80,
+        child: FloatingActionButton(
+          onPressed: () {
+            print('mama mo');
+          },
+          backgroundColor: Colors.greenAccent,
+          child: Icon(Icons.qr_code),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      body: ValueListenableBuilder(
+        valueListenable: selectedPageNotifier,
+        builder: (context, selectedPage, child) {
+          return pages.elementAt(selectedPage);
+        },
+      ),
+      bottomNavigationBar: Navibar(),
     );
   }
 }
