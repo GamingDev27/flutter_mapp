@@ -13,7 +13,7 @@ List<Widget> pages = [
   YattaPage(),
   MenuPage(),
   SearchPage(),
-  SettingsPage(),
+  SettingPage(),
 ];
 
 class Layout extends StatelessWidget {
@@ -42,6 +42,19 @@ class Layout extends StatelessWidget {
                 );
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
