@@ -33,6 +33,41 @@ class _SettingPageState extends State<SettingPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              ElevatedButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text('Save Successfully'),
+                      backgroundColor: Colors.amber,
+                      behavior: SnackBarBehavior.floating,
+                    ),
+                  );
+                },
+                child: Text('Save Settings(Snackbar)'),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        title: Text('Save'),
+                        content: Text('Save Settings?'),
+                        actions: [
+                          FilledButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: Text('Save'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Save Settings(Alert)'),
+              ),
+              Divider(color: Colors.teal, thickness: 2.0),
               DropdownButton(
                 value: menuItem,
                 items: [
