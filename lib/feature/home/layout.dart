@@ -13,7 +13,7 @@ List<Widget> pages = [
   YattaPage(),
   MenuPage(),
   SearchPage(),
-  SettingPage(),
+  SettingPage(title: 'Settings'),
 ];
 
 class Layout extends StatelessWidget {
@@ -49,7 +49,7 @@ class Layout extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return SettingPage();
+                    return SettingPage(title: 'Settings');
                   },
                 ),
               );
