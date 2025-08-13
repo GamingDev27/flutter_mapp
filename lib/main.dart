@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/data/notifiers.dart';
 import 'package:flutter_mapp/feature/home/layout.dart';
+import 'package:flutter_mapp/feature/login/views/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
                   : Brightness.light,
             ),
           ),
-          home: MyHomePage(),
+          home: Login(),
         );
       },
     );
