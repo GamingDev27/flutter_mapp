@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_mapp/data/notifiers.dart';
 import 'package:flutter_mapp/feature/home/layout.dart';
 import 'package:flutter_mapp/feature/login/views/login.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
   await SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
@@ -21,8 +21,26 @@ double number = 0.0;
 List navigation = ['Home', 'Profile', 'Settings', 'About'];
 Map mapNav = {'name': "John Doe"};
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    initPrefVariables();
+    super.initState();
+  }
+
+  void initPrefVariables() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? isDarkMode = prefs.getBool('is_darkMode');
+    isDarkModeNotifier.value = isDarkMode ?? false;
+  }
 
   @override
   Widget build(BuildContext context) {
