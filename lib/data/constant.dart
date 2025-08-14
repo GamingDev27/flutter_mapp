@@ -4,7 +4,7 @@ class KTextStyle {
   static const TextStyle titleTextTeal = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
-    color: Colors.teal,
+    color: Color(0xFF008080),
   );
 
   static const TextStyle descriptionTextTeal = TextStyle(fontSize: 16);

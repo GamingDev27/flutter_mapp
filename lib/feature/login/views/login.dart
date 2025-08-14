@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/feature/home/layout.dart';
+import 'package:flutter_mapp/feature/home/views/login_page.dart';
 import 'package:flutter_mapp/widget/hero.dart';
 
 class Login extends StatelessWidget {
@@ -14,19 +15,46 @@ class Login extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            HeroWidget(),
+            HeroWidget(title: 'Welcome Screen'),
+            FittedBox(
+              child: Text(
+                'Flutter Mapp',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 25.0,
+                ),
+              ),
+            ),
+            SizedBox(height: 24),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return Layout();
+                      return LoginMain();
                     },
                   ),
                 );
               },
-              child: Text('Login'),
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 40),
+              ),
+              child: Text(
+                'Get Started',
+                style: TextStyle(fontSize: 16, letterSpacing: 4),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 40),
+              ),
+              child: Text(
+                'Login',
+                style: TextStyle(fontSize: 16, letterSpacing: 4),
+              ),
             ),
           ],
         ),
