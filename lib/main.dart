@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
 
   void initPrefVariables() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final bool? isDarkMode = prefs.getBool('is_darkMode');
+    final bool? isDarkMode = prefs.getBool('is_darkmode');
     isDarkModeNotifier.value = isDarkMode ?? false;
   }
 
