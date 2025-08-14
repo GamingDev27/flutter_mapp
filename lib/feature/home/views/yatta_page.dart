@@ -15,13 +15,14 @@ class YattaPage extends StatelessWidget {
             title: Text('Logout'),
             onTap: () {
               selectedPageNotifier.value = 0;
-              Navigator.pushReplacement(
+              Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
                     return Login();
                   },
                 ),
+                (Route<dynamic> route) => false,
               );
             },
           ),

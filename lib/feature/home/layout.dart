@@ -33,9 +33,9 @@ class Layout extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () async {
+              isDarkModeNotifier.value = !isDarkModeNotifier.value;
               final SharedPreferences prefs =
                   await SharedPreferences.getInstance();
-              isDarkModeNotifier.value = !isDarkModeNotifier.value;
               await prefs.setBool('is_darkmode', isDarkModeNotifier.value);
             },
             icon: ValueListenableBuilder(
