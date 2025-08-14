@@ -34,52 +34,54 @@ class _LoginMainState extends State<LoginMain> {
       appBar: AppBar(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            HeroWidget(title: 'Login'),
-            SizedBox(height: 20),
-            TextField(
-              controller: email,
-              style: TextStyle(fontSize: 24),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              HeroWidget(title: 'Login'),
+              SizedBox(height: 20),
+              TextField(
+                controller: email,
+                style: TextStyle(fontSize: 24),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  hintText: 'Email',
                 ),
-                hintText: 'Email',
+                onEditingComplete: () {
+                  setState(() {});
+                },
               ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
-            SizedBox(height: 10),
-            TextField(
-              controller: password,
-              obscureText: true,
-              style: TextStyle(fontSize: 24),
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
+              SizedBox(height: 10),
+              TextField(
+                controller: password,
+                obscureText: true,
+                style: TextStyle(fontSize: 24),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  hintText: 'Password',
                 ),
-                hintText: 'Password',
+                onEditingComplete: () {
+                  setState(() {});
+                },
               ),
-              onEditingComplete: () {
-                setState(() {});
-              },
-            ),
-            SizedBox(height: 15),
-            FilledButton(
-              onPressed: () {
-                loginCredentials();
-              },
-              style: FilledButton.styleFrom(
-                minimumSize: Size(double.infinity, 40),
+              SizedBox(height: 15),
+              FilledButton(
+                onPressed: () {
+                  loginCredentials();
+                },
+                style: FilledButton.styleFrom(
+                  minimumSize: Size(double.infinity, 40),
+                ),
+                child: Text(
+                  'Login',
+                  style: TextStyle(fontSize: 16, letterSpacing: 8),
+                ),
               ),
-              child: Text(
-                'Login',
-                style: TextStyle(fontSize: 16, letterSpacing: 8),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

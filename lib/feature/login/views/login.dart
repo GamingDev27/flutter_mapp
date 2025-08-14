@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
             SizedBox(height: 24),
             FilledButton(
               onPressed: () {
-                Navigator.pushReplacement(
+                Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
