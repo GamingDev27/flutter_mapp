@@ -10,8 +10,8 @@ class LoginMain extends StatefulWidget {
 }
 
 class _LoginMainState extends State<LoginMain> {
-  TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController email = TextEditingController(text: 'jdoe@test.com');
+  TextEditingController password = TextEditingController(text: 'Abcd1234!');
 
   String validEmail = 'jdoe@test.com';
   String validPassword = 'Abcd1234!';
