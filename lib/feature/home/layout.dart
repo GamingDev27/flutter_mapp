@@ -6,6 +6,7 @@ import 'package:flutter_mapp/feature/home/views/search_page.dart';
 import 'package:flutter_mapp/feature/home/views/settings_page.dart';
 import 'package:flutter_mapp/feature/home/views/yatta_page.dart';
 import 'package:flutter_mapp/widget/NavBar.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 String? title1 = '1stOfMay';
 List<Widget> pages = [
@@ -31,8 +32,11 @@ class Layout extends StatelessWidget {
         backgroundColor: Colors.indigo,
         actions: [
           IconButton(
-            onPressed: () {
+            onPressed: () async {
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
               isDarkModeNotifier.value = !isDarkModeNotifier.value;
+              await prefs.setBool('is_darkmode', isDarkModeNotifier.value);
             },
             icon: ValueListenableBuilder(
               valueListenable: isDarkModeNotifier,
