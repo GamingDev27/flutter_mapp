@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mapp/feature/home/layout.dart';
 import 'package:flutter_mapp/feature/home/views/login_page.dart';
 import 'package:flutter_mapp/widget/hero.dart';
 
@@ -8,6 +7,7 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double widthSize = MediaQuery.of(context).size.width;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
