@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/feature/home/views/expanded_flexible_page.dart';
+import 'dart:convert' as convert;
+import 'package:http/http.dart' as http;
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key, required this.title});
@@ -15,6 +17,29 @@ class _SettingPageState extends State<SettingPage> {
   bool isSwitched = false;
   double sliderValue = 0.0;
   String? menuItem = '1';
+
+  @override
+  void initState() {
+    getResource();
+    print('Im RUNNING');
+    // TODO: implement initState
+    super.initState();
+  }
+
+  void getResource() async {
+    var url = Uri.https('bored-api.appbrewery.com', '/random', {'q': '{http}'});
+
+    // Await the http get response, then decode the json-formatted response.
+    var response = await http.get(url);
+    if (response.statusCode == 200) {
+      var jsonResponse =
+          convert.jsonDecode(response.body) as Map<String, dynamic>;
+      var itemCount = jsonResponse['activity'];
+      print('Number of books about http: $itemCount.');
+    } else {
+      print('Request failed with status: ${response.statusCode}.');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
