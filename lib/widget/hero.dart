@@ -12,13 +12,16 @@ class HeroWidget extends StatelessWidget {
       children: [
         Hero(
           tag: 'login-hero',
-          child: ClipRRect(
-            borderRadius: BorderRadiusGeometry.circular(20.0),
-            child: Container(
-              height: 200,
-              width: double.infinity,
-              color: Colors.blueGrey[100],
-              padding: EdgeInsets.all(4),
+          child: AspectRatio(
+            aspectRatio: 1980 / 1080,
+            child: ClipRRect(
+              borderRadius: BorderRadiusGeometry.circular(20.0),
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.blueGrey[100],
+                padding: EdgeInsets.all(4),
+              ),
             ),
           ),
         ),
