@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mapp/data/notifiers.dart';
+import 'package:flutter_mapp/feature/home/views/expanded_flexible_page.dart';
 import 'package:flutter_mapp/feature/home/views/home_page.dart';
 import 'package:flutter_mapp/feature/home/views/menu_page.dart';
 import 'package:flutter_mapp/feature/home/views/search_page.dart';

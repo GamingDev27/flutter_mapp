@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mapp/feature/home/views/expanded_flexible_page.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key, required this.title});
@@ -168,6 +169,19 @@ class _SettingPageState extends State<SettingPage> {
                     child: Text('Save'),
                   ),
                   ElevatedButton(onPressed: () {}, child: Text('Edit')),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return ExpandedFlexiblePage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Text('Go to Expanded/Flexible'),
+                  ),
                   FilledButton(onPressed: () {}, child: Text('Exit')),
                   TextButton(onPressed: () {}, child: Text('Skip')),
                   CloseButton(onPressed: () {}),
