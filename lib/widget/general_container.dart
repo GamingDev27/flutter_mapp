@@ -45,11 +45,18 @@ class _GeneralContainerState extends State<GeneralContainer> {
                 ],
               ),
               SizedBox(height: 12.0),
-              FilledButton(
+              ElevatedButton(
                 onPressed: () {},
-                child: Text('Start Trip'),
-                style: FilledButton.styleFrom(
+                style: ElevatedButton.styleFrom(
                   minimumSize: Size(double.infinity, 40),
+                  backgroundColor: Colors.teal,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadiusGeometry.circular(5),
+                  ),
+                ),
+                child: Text(
+                  'Start Trip',
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
             ],
@@ -57,6 +64,5 @@ class _GeneralContainerState extends State<GeneralContainer> {
         ),
       ),
     );
-    ;
   }
 }
