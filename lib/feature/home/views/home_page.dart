@@ -8,90 +8,52 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> content = [
+      {
+        'company': 'Company ABC',
+        'route': 'Cubao to BGC',
+        'date': 'August 21, 2025',
+        'time': '7:00 AM',
+      },
+      {
+        'company': 'San Isidro Construction',
+        'route': 'Cubao to BGC',
+        'date': 'July 12, 2025',
+        'time': '8:00 AM',
+      },
+      {
+        'company': 'Malaya Incorporated',
+        'route': 'Cubao to BGC',
+        'date': 'July 12, 2025',
+        'time': '8:00 AM',
+      },
+      {
+        'company': 'Cavite State University',
+        'route': 'Cavite to Bataan',
+        'date': 'August 10, 2025',
+        'time': '8:00 AM',
+      },
+      {
+        'company': 'International Container Terminal Services Inc',
+        'route': 'Manila to Bicol',
+        'date': 'September 12, 2025',
+        'time': '8:00 AM',
+      },
+    ];
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: SingleChildScrollView(
         child: Column(
           children: [
             HeroWidget(title: 'Home Page'),
-            GeneralContainer(
-              company: 'Company ABC',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
-            GeneralContainer(
-              company: 'San Isidro Construction',
-              route: 'Cubao to BGC',
-              date: 'July 12, 2025',
-              time: '8:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Malaya Incorporated',
-              route: 'Cubao to BGC',
-              date: 'September 08, 2025',
-              time: '10:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Cavite State University',
-              route: 'Cavite to Bataan',
-              date: 'December 11, 2025',
-              time: '5:00 AM',
-            ),
-            GeneralContainer(
-              company: 'San Isidro Construction',
-              route: 'Cubao to BGC',
-              date: 'July 12, 2025',
-              time: '8:00 AM',
-            ),
-            GeneralContainer(
-              company: 'International Container Terminal Services Inc',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Cavite State University',
-              route: 'Cavite to Bataan',
-              date: 'December 11, 2025',
-              time: '5:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Malaya Incorporated',
-              route: 'Cubao to BGC',
-              date: 'September 08, 2025',
-              time: '10:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Company ABC',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Cavite State University',
-              route: 'Cavite to Bataan',
-              date: 'December 11, 2025',
-              time: '5:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Company ABC',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Company ABC',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
-            GeneralContainer(
-              company: 'Company ABC',
-              route: 'Cubao to BGC',
-              date: 'August 21, 2025',
-              time: '7:00 AM',
-            ),
+            ...List.generate(content.length, (index) {
+              return GeneralContainer(
+                company: content.elementAt(index)['company'],
+                route: content.elementAt(index)['route'],
+                date: content.elementAt(index)['date'],
+                time: content.elementAt(index)['time'],
+              );
+            }),
           ],
         ),
       ),
